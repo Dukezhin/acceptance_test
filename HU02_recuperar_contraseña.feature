@@ -1,8 +1,9 @@
-Feature: Registro de deportistas universitarios
+Feature: Recuperación de cuenta por olvido de contraseña
 
-  Scenario: Deportista se registra exitosamente
-    Given que el deportista accede a la plataforma de Psyletics
-    When completa el formulario de registro con sus datos personales y deportivos
-    And envía el formulario
-    Then su cuenta debe ser creada correctamente
-    And debe poder iniciar sesión para registrar su progreso emocional
+  Scenario: Usuario recupera su cuenta
+    Given que el deportista está en la pantalla de inicio de sesión
+    And ha olvidado su contraseña
+    When selecciona la opción "¿Olvidaste tu contraseña?"
+    And ingresa su correo registrado
+    Then el sistema le envía un enlace para restablecer la contraseña
+    And puede ingresar una nueva contraseña y acceder a su cuenta
